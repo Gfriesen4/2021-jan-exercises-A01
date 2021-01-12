@@ -16,9 +16,7 @@ namespace ChinookSystem.Entities
     {
 
         private string _Name;
-        private string _Composer;
-        private int _Milliseconds;
-        private int _UnitPrice;
+        private string _Composer;        
 
         [Key]
         public int TrackId { get; set; }
