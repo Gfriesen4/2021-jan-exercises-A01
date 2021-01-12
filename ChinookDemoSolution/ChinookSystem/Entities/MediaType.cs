@@ -8,29 +8,26 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 #endregion
+
 namespace ChinookSystem.Entities
 {
-    [Table("Artists")]
-    internal class Artist
+    [Table("MediaTypes")]
+    internal class MediaType
     {
 
         private string _Name;
         [Key]
-        public int ArtistId { get; set; }
+        public int MediaTypeId { get; set; }
 
-       // [Required(ErrorMessage = "Artist name is limited to 120 characters.")]
-        [StringLength(120, ErrorMessage ="Artist name is limited to 120 characters.")]
+        // [Required(ErrorMessage = "Media Type is limited to 120 characters.")]
+        [StringLength(120, ErrorMessage = "Media Type is limited to 120 characters.")]
         public string Name
         {
             get { return _Name; }
             set { _Name = string.IsNullOrEmpty(value) ? null : value; }
 
         }
-       
-        //Navigational Property
-        //1 to many relationship; creat the many relationship in this entity
 
-        public virtual ICollection<Album> Albums { get; set; }
-
+        public virtual ICollection<Track> Tracks { get; set; }
     }
 }
