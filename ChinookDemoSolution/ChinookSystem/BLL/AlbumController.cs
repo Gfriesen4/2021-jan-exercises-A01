@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 #region Additional Namespaces
 using ChinookSystem.Entities;
 using ChinookSystem.DAL;
-using ChinookSystem.VireModels;
-using System.ComponentModel; //is for ODS
+using ChinookSystem.ViewModels;
+using System.ComponentModel;    //is for ODS
 #endregion
+
 namespace ChinookSystem.BLL
 {
     [DataObject]
     public class AlbumController
     {
-        //Due to the fact that the entities are Internal, You CAN NOT use the Entity class as a return Datatype
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<ArtistAlbums> Albums_GetArtistAlbums()
+        //due to the fact that the entities are internal
+        //  you CAN NOT use the entity class as a return datatype
+        [DataObjectMethod(DataObjectMethodType.Select,false)]
+        public List<ArtistAlbums>  Albums_GetArtistAlbums()
         {
             using(var context = new ChinookSystemContext())
             {
@@ -31,8 +33,7 @@ namespace ChinookSystem.BLL
                                                         ArtistName = x.Artist.Name
                                                     };
                 return results.ToList();
-            }   
-
+            }
         }
     }
 }

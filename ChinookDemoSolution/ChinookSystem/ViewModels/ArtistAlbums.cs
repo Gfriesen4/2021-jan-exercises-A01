@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChinookSystem.VireModels
+namespace ChinookSystem.ViewModels
 {
-    class ArtistAlbums
+    public class ArtistAlbums
     {
         public string Title { get; set; }
 
